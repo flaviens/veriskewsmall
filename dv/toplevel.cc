@@ -44,47 +44,6 @@ std::vector<single_input_recording_t> read_recorded_trace(std::string path_to_re
     dumpfile >> acquired.axi_resp_i_t0[1];
     dumpfile >> acquired.axi_resp_i_t0[2];
 
-    dumpfile >> acquired.axi_req_o_t0[0];
-    dumpfile >> acquired.axi_req_o_t0[1];
-    dumpfile >> acquired.axi_req_o_t0[2];
-    dumpfile >> acquired.axi_req_o_t0[3];
-    dumpfile >> acquired.axi_req_o_t0[4];
-    dumpfile >> acquired.axi_req_o_t0[5];
-    dumpfile >> acquired.axi_req_o_t0[6];
-    dumpfile >> acquired.axi_req_o_t0[7];
-    dumpfile >> acquired.axi_req_o_t0[8];
-    dumpfile >> acquired.axi_req_o[0];
-    dumpfile >> acquired.axi_req_o[1];
-    dumpfile >> acquired.axi_req_o[2];
-    dumpfile >> acquired.axi_req_o[3];
-    dumpfile >> acquired.axi_req_o[4];
-    dumpfile >> acquired.axi_req_o[5];
-    dumpfile >> acquired.axi_req_o[6];
-    dumpfile >> acquired.axi_req_o[7];
-    dumpfile >> acquired.axi_req_o[8];
-    dumpfile >> acquired.axi_rd_data_t0;
-    dumpfile >> acquired.axi_rd_data;
-    dumpfile >> acquired.axi_rd_exokay_t0;
-    dumpfile >> acquired.axi_rd_exokay;
-    dumpfile >> acquired.axi_rd_gnt_t0;
-    dumpfile >> acquired.axi_rd_gnt;
-    dumpfile >> acquired.axi_rd_id_out_t0;
-    dumpfile >> acquired.axi_rd_id_out;
-    dumpfile >> acquired.axi_rd_last_t0;
-    dumpfile >> acquired.axi_rd_last;
-    dumpfile >> acquired.axi_rd_user_t0;
-    dumpfile >> acquired.axi_rd_user;
-    dumpfile >> acquired.axi_rd_valid_t0;
-    dumpfile >> acquired.axi_rd_valid;
-    dumpfile >> acquired.axi_wr_exokay_t0;
-    dumpfile >> acquired.axi_wr_exokay;
-    dumpfile >> acquired.axi_wr_gnt_t0;
-    dumpfile >> acquired.axi_wr_gnt;
-    dumpfile >> acquired.axi_wr_id_out_t0;
-    dumpfile >> acquired.axi_wr_id_out;
-    dumpfile >> acquired.axi_wr_valid_t0;
-    dumpfile >> acquired.axi_wr_valid;
-
     recorded_trace.push_back(acquired);
   }
   dumpfile.close();
@@ -117,47 +76,6 @@ static void feed_tb(Testbench *tb, single_input_recording_t acquired) {
   tb->module_->axi_resp_i_t0[0]     = acquired.axi_resp_i_t0[0];
   tb->module_->axi_resp_i_t0[1]     = acquired.axi_resp_i_t0[1];
   tb->module_->axi_resp_i_t0[2]     = acquired.axi_resp_i_t0[2];
-
-  tb->module_->rootp->vlSymsp->TOP__wt_axi_adapter.axi_req_o_t0[0]   = acquired.axi_req_o_t0[0];
-  tb->module_->rootp->vlSymsp->TOP__wt_axi_adapter.axi_req_o_t0[1]   = acquired.axi_req_o_t0[1];
-  tb->module_->rootp->vlSymsp->TOP__wt_axi_adapter.axi_req_o_t0[2]   = acquired.axi_req_o_t0[2];
-  tb->module_->rootp->vlSymsp->TOP__wt_axi_adapter.axi_req_o_t0[3]   = acquired.axi_req_o_t0[3];
-  tb->module_->rootp->vlSymsp->TOP__wt_axi_adapter.axi_req_o_t0[4]   = acquired.axi_req_o_t0[4];
-  tb->module_->rootp->vlSymsp->TOP__wt_axi_adapter.axi_req_o_t0[5]   = acquired.axi_req_o_t0[5];
-  tb->module_->rootp->vlSymsp->TOP__wt_axi_adapter.axi_req_o_t0[6]   = acquired.axi_req_o_t0[6];
-  tb->module_->rootp->vlSymsp->TOP__wt_axi_adapter.axi_req_o_t0[7]   = acquired.axi_req_o_t0[7];
-  tb->module_->rootp->vlSymsp->TOP__wt_axi_adapter.axi_req_o_t0[8]   = acquired.axi_req_o_t0[8];
-  tb->module_->rootp->vlSymsp->TOP__wt_axi_adapter.axi_req_o[0]      = acquired.axi_req_o[0];
-  tb->module_->rootp->vlSymsp->TOP__wt_axi_adapter.axi_req_o[1]      = acquired.axi_req_o[1];
-  tb->module_->rootp->vlSymsp->TOP__wt_axi_adapter.axi_req_o[2]      = acquired.axi_req_o[2];
-  tb->module_->rootp->vlSymsp->TOP__wt_axi_adapter.axi_req_o[3]      = acquired.axi_req_o[3];
-  tb->module_->rootp->vlSymsp->TOP__wt_axi_adapter.axi_req_o[4]      = acquired.axi_req_o[4];
-  tb->module_->rootp->vlSymsp->TOP__wt_axi_adapter.axi_req_o[5]      = acquired.axi_req_o[5];
-  tb->module_->rootp->vlSymsp->TOP__wt_axi_adapter.axi_req_o[6]      = acquired.axi_req_o[6];
-  tb->module_->rootp->vlSymsp->TOP__wt_axi_adapter.axi_req_o[7]      = acquired.axi_req_o[7];
-  tb->module_->rootp->vlSymsp->TOP__wt_axi_adapter.axi_req_o[8]      = acquired.axi_req_o[8];
-  tb->module_->rootp->vlSymsp->TOP__wt_axi_adapter.axi_rd_data_t0    = acquired.axi_rd_data_t0;
-  tb->module_->rootp->vlSymsp->TOP__wt_axi_adapter.axi_rd_data       = acquired.axi_rd_data;
-  tb->module_->rootp->vlSymsp->TOP__wt_axi_adapter.axi_rd_exokay_t0  = acquired.axi_rd_exokay_t0;
-  tb->module_->rootp->vlSymsp->TOP__wt_axi_adapter.axi_rd_exokay     = acquired.axi_rd_exokay;
-  tb->module_->rootp->vlSymsp->TOP__wt_axi_adapter.axi_rd_gnt_t0     = acquired.axi_rd_gnt_t0;
-  tb->module_->rootp->vlSymsp->TOP__wt_axi_adapter.axi_rd_gnt        = acquired.axi_rd_gnt;
-  tb->module_->rootp->vlSymsp->TOP__wt_axi_adapter.axi_rd_id_out_t0  = acquired.axi_rd_id_out_t0;
-  tb->module_->rootp->vlSymsp->TOP__wt_axi_adapter.axi_rd_id_out     = acquired.axi_rd_id_out;
-  tb->module_->rootp->vlSymsp->TOP__wt_axi_adapter.axi_rd_last_t0    = acquired.axi_rd_last_t0;
-  tb->module_->rootp->vlSymsp->TOP__wt_axi_adapter.axi_rd_last       = acquired.axi_rd_last;
-  tb->module_->rootp->vlSymsp->TOP__wt_axi_adapter.axi_rd_user_t0    = acquired.axi_rd_user_t0;
-  tb->module_->rootp->vlSymsp->TOP__wt_axi_adapter.axi_rd_user       = acquired.axi_rd_user;
-  tb->module_->rootp->vlSymsp->TOP__wt_axi_adapter.axi_rd_valid_t0   = acquired.axi_rd_valid_t0;
-  tb->module_->rootp->vlSymsp->TOP__wt_axi_adapter.axi_rd_valid      = acquired.axi_rd_valid;
-  tb->module_->rootp->vlSymsp->TOP__wt_axi_adapter.axi_wr_exokay_t0  = acquired.axi_wr_exokay_t0;
-  tb->module_->rootp->vlSymsp->TOP__wt_axi_adapter.axi_wr_exokay     = acquired.axi_wr_exokay;
-  tb->module_->rootp->vlSymsp->TOP__wt_axi_adapter.axi_wr_gnt_t0     = acquired.axi_wr_gnt_t0;
-  tb->module_->rootp->vlSymsp->TOP__wt_axi_adapter.axi_wr_gnt        = acquired.axi_wr_gnt;
-  tb->module_->rootp->vlSymsp->TOP__wt_axi_adapter.axi_wr_id_out_t0  = acquired.axi_wr_id_out_t0;
-  tb->module_->rootp->vlSymsp->TOP__wt_axi_adapter.axi_wr_id_out     = acquired.axi_wr_id_out;
-  tb->module_->rootp->vlSymsp->TOP__wt_axi_adapter.axi_wr_valid_t0   = acquired.axi_wr_valid_t0;
-  tb->module_->rootp->vlSymsp->TOP__wt_axi_adapter.axi_wr_valid      = acquired.axi_wr_valid;
 }
 
 /**
@@ -171,7 +89,6 @@ static void run_test(Testbench *tb, std::string path_to_recording) {
   uint32_t clk = 0;
   for (size_t step_id = 0; step_id < recorded_trace.size(); step_id+=3) {
     single_input_recording_t acquired;
-    printf("Step %d\n", step_id);
     acquired = recorded_trace[step_id];
     feed_tb(tb, acquired);
     tb->module_->eval();

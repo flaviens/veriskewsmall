@@ -42,31 +42,67 @@ typedef struct {
   uint32_t dcache_data_i_t0[5];  // 135 bits
   uint32_t axi_resp_i_t0[3];     // 86 bits
 
-// AXI shim outputs
-  uint32_t axi_req_o_t0[9];
-  uint32_t axi_req_o[9];
-  uint64_t axi_rd_data_t0;
-  uint64_t axi_rd_data;
-  uint64_t axi_rd_exokay_t0;
-  uint64_t axi_rd_exokay;
-  uint64_t axi_rd_gnt_t0;
-  uint64_t axi_rd_gnt;
-  uint64_t axi_rd_id_out_t0;
-  uint64_t axi_rd_id_out;
-  uint64_t axi_rd_last_t0;
-  uint64_t axi_rd_last;
-  uint64_t axi_rd_user_t0;
-  uint64_t axi_rd_user;
-  uint64_t axi_rd_valid_t0;
-  uint64_t axi_rd_valid;
-  uint64_t axi_wr_exokay_t0;
-  uint64_t axi_wr_exokay;
-  uint64_t axi_wr_gnt_t0;
-  uint64_t axi_wr_gnt;
-  uint64_t axi_wr_id_out_t0;
-  uint64_t axi_wr_id_out;
-  uint64_t axi_wr_valid_t0;
-  uint64_t axi_wr_valid;
+// Mem top
+  // uint64_t boot_addr_i;
+  // uint64_t boot_addr_i_t0;
+  // uint64_t clk_i;
+  // uint64_t debug_req_i;
+  // uint64_t debug_req_i_t0;
+  // uint64_t hart_id_i;
+  // uint64_t hart_id_i_t0;
+  // uint64_t ipi_i;
+  // uint64_t ipi_i_t0;
+  // uint64_t irq_i;
+  // uint64_t irq_i_t0;
+  // uint64_t mem_gnt_i;
+  // uint64_t mem_gnt_i_t0;
+  // uint64_t mem_rdata_i;
+  // uint64_t mem_rdata_i_t0;
+  // uint64_t rst_ni;
+  // uint64_t time_irq_i;
+  // uint64_t time_irq_i_t0;
+
+// CVA6
+  // uint64_t axi_resp_i[3];
+  // uint64_t axi_resp_i_t0[3];
+  // uint64_t boot_addr_i;
+  // uint64_t boot_addr_i_t0;
+  // uint64_t clk_i;
+  // uint64_t cvxif_resp_i[8];
+  // uint64_t cvxif_resp_i_t0[8];
+  // uint64_t debug_req_i;
+  // uint64_t debug_req_i_t0;
+  // uint64_t hart_id_i;
+  // uint64_t hart_id_i_t0;
+  // uint64_t ipi_i;
+  // uint64_t ipi_i_t0;
+  // uint64_t irq_i;
+  // uint64_t irq_i_t0;
+  // uint64_t rst_ni;
+  // uint64_t time_irq_i;
+  // uint64_t time_irq_i_t0;
+
+// Cache subsystem
+  // uint64_t axi_resp_i[3];
+  // uint64_t axi_resp_i_t0[3];
+  // uint64_t clk_i;
+  // uint64_t dcache_amo_req_i[5];
+  // uint64_t dcache_amo_req_i_t0[5];
+  // uint64_t dcache_enable_i;
+  // uint64_t dcache_enable_i_t0;
+  // uint64_t dcache_flush_i;
+  // uint64_t dcache_flush_i_t0;
+  // uint64_t dcache_req_ports_i[13];
+  // uint64_t dcache_req_ports_i_t0[13];
+  // uint64_t icache_areq_i[6];
+  // uint64_t icache_areq_i_t0[6];
+  // uint64_t icache_dreq_i[3];
+  // uint64_t icache_dreq_i_t0[3];
+  // uint64_t icache_en_i;
+  // uint64_t icache_en_i_t0;
+  // uint64_t icache_flush_i;
+  // uint64_t icache_flush_i_t0;
+  // uint64_t rst_ni;
 } single_input_recording_t;
 
 // This class implements elementary interaction with the design under test.
