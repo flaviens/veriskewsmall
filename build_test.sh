@@ -34,7 +34,7 @@ TRACE_FLAGS="--trace-fst \
 --trace-params \
 --trace-max-array 1024"
 
-SV_FILES=src/ariane_mem_top.sv
+SV_FILES=src/cva6_top.sv
 
 verilator -fno-inline --cc $SV_FILES $WARNING_FLAGS $TRACE_FLAGS \
     --exe -Idv $CC_FILES \

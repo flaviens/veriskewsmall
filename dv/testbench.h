@@ -2,7 +2,7 @@
 // Licensed under the General Public License, Version 3.0, see LICENSE for details.
 // SPDX-License-Identifier: GPL-3.0-only
 
-#include "Variane_mem_top.h"
+#include "Vcva6_top.h"
 #include "verilated.h"
 
 #if VM_TRACE
@@ -25,13 +25,51 @@
 const int kTraceLevel = 6;
 #endif // VM_TRACE
 
-typedef Variane_mem_top Module;
+typedef Vcva6_top Module;
 
 typedef struct {
+// Adapter
+  // uint32_t clk_i;                // 1 bit
+  // uint32_t rst_ni;               // 1 bit
+  // uint32_t icache_data_req_i;    // 1 bit
+  // uint32_t dcache_data_req_i;    // 1 bit
+  // uint64_t icache_data_i;        // 61 bits
+  // uint32_t dcache_data_i[5];     // 135 bits
+  // uint32_t axi_resp_i[3];        // 86 bits
+  // uint32_t icache_data_req_i_t0; // 1 bit
+  // uint32_t dcache_data_req_i_t0; // 1 bit
+  // uint64_t icache_data_i_t0;     // 61 bits
+  // uint32_t dcache_data_i_t0[5];  // 135 bits
+  // uint32_t axi_resp_i_t0[3];     // 86 bits
+
 // Mem top
+  // uint64_t boot_addr_i;
+  // uint64_t boot_addr_i_t0;
+  // uint64_t clk_i;
+  // uint64_t debug_req_i;
+  // uint64_t debug_req_i_t0;
+  // uint64_t hart_id_i;
+  // uint64_t hart_id_i_t0;
+  // uint64_t ipi_i;
+  // uint64_t ipi_i_t0;
+  // uint64_t irq_i;
+  // uint64_t irq_i_t0;
+  // uint64_t mem_gnt_i;
+  // uint64_t mem_gnt_i_t0;
+  // uint64_t mem_rdata_i;
+  // uint64_t mem_rdata_i_t0;
+  // uint64_t rst_ni;
+  // uint64_t time_irq_i;
+  // uint64_t time_irq_i_t0;
+
+// CVA6
+  uint64_t axi_resp_i[3];
+  uint64_t axi_resp_i_t0[3];
   uint64_t boot_addr_i;
   uint64_t boot_addr_i_t0;
   uint64_t clk_i;
+  uint64_t cvxif_resp_i[8];
+  uint64_t cvxif_resp_i_t0[8];
   uint64_t debug_req_i;
   uint64_t debug_req_i_t0;
   uint64_t hart_id_i;
@@ -40,10 +78,6 @@ typedef struct {
   uint64_t ipi_i_t0;
   uint64_t irq_i;
   uint64_t irq_i_t0;
-  uint64_t mem_gnt_i;
-  uint64_t mem_gnt_i_t0;
-  uint64_t mem_rdata_i;
-  uint64_t mem_rdata_i_t0;
   uint64_t rst_ni;
   uint64_t time_irq_i;
   uint64_t time_irq_i_t0;
