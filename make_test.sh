@@ -1,1 +1,1 @@
-make -C obj_dir -f Vwt_axi_adapter.mk Vwt_axi_adapter -j 250
+make -C obj_dir -f Variane_mem_top.mk Variane_mem_top -j 250
