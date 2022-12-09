@@ -2,7 +2,7 @@
 
 ## How to reproduce
 
-Requirements: Verilator `Verilator 5.003 devel rev v4.228-192-g79682e607` and fusesoc.
+Requirements: Verilator `Verilator 5.003 devel rev v4.228-192-g79682e607`.
 Tried on Ubuntu 22.04.
 
 ```
